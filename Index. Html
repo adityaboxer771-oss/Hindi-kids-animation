@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hindi Kids Animation Studio</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #101426;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+.card {
+  background: #202944;
+  padding: 22px;
+  border-radius: 16px;
+  margin: 20px auto;
+  max-width: 500px;
+}
+button {
+  background: #7357ff;
+  color: white;
+  border: none;
+  padding: 13px 22px;
+  border-radius: 9px;
+  margin: 8px;
+  font-size: 16px;
+}
+textarea {
+  width: 90%;
+  height: 110px;
+  padding: 10px;
+  border-radius: 8px;
+}
+</style>
+</head>
+<body>
+
+<h1>🎬 Hindi Kids Animation Studio</h1>
+<p>AI-powered Hindi Kids Stories</p>
+
+<div class="card">
+<h2>📖 Story Creator</h2>
+<textarea id="story" placeholder="Write your Hindi kids story idea..."></textarea>
+<br>
+<button onclick="makePrompt()">Create Video Prompt</button>
+<p id="result"></p>
+</div>
+
+<div class="card">
+<h2>🎨 Animation Studio</h2>
+<p>Stories • Characters • Images • Voiceovers</p>
+<p>Build your next kids animation here!</p>
+</div>
+
+<script>
+function makePrompt() {
+ const story = document.getElementById("story").value;
+ if (!story.trim()) {
+  alert("Please write a story idea!");
+  return;
+ }
+ document.getElementById("result").innerText =
+ "Create a colourful 3D Hindi kids animation based on: " +
+ story + ". Use friendly characters, Hindi narration and a happy ending.";
+}
+</script>
+
+</body>
+</html>
