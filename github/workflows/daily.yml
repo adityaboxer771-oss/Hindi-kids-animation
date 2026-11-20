@@ -1,0 +1,33 @@
+
+name: Daily Kids Animation Studio
+
+on:
+  schedule:
+    - cron: '30 12 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  daily-video:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check project
+        run: |
+          echo "Hindi Kids Animation Studio"
+          echo "Daily workflow started"
+          echo "Target: 1 video per day"
+          echo "Checking story files..."
+          ls -la
+          ls -la stories || true
+
+      - name: Finish
+        run: echo "Workflow test completed successfully!"
