@@ -1,1 +1,15 @@
 
+name: Daily Kids Video Automation
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+      timezone: "Asia/Kolkata"
+  workflow_dispatch:
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test automation
+        run: echo "Daily automation is running!"
